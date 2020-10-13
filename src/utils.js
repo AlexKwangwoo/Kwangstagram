@@ -30,4 +30,4 @@ export const sendSecretMail = (adress, secret) => {
     html: `Hello! Your login secret it ${secret}.<br>Copy paste on the app/website to log in`
   };
   return sendMail(email);
-};// sendMail에서 client를 붙여 함수를 보냄!
+};// sendMail에서 client를 붙여 함수를 보냄!!!
