@@ -1,0 +1,4 @@
+type Query {
+  searchUser(term: String!): [User!]!
+}
+# 1개 또는 100개도 가져올수있으므로  [User!]!
