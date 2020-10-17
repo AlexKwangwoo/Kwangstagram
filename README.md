@@ -11,6 +11,7 @@ Instragram clone with Express + Prisma + React and React Native
 - [x] See user profile
 - [x] Follow / Unfollow User
 - [x] See the full photo
+- [ ] Follow User
 - [ ] Edit my profile
 - [ ] Create account
 - [ ] Log in
