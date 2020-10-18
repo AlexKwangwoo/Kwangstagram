@@ -1,17 +1,13 @@
 import { prisma } from "../../../../generated/prisma-client";
-import { USER_FRAGMENT } from "../../../fragments";
 
 export default {
   Query: {
     me: async (_, __, { request, isAuthenticated }) => {
       isAuthenticated(request);
       const { user } = request;
-      const userProfile = await prisma.user({ id: user.id });
-      const posts = await prisma.user({ id: user.id }).posts();
-      return {
-        user: userProfile,
-        posts
-      };
-    }
-  }
+      return await prisma.user({ id: user.id });
+      //여기서 리턴을 user로 해줘서
+      //프론트앤드에서 header쪽 me에서 user 입력없이 바로 username 이 가능함!
+    },
+  },
 };
