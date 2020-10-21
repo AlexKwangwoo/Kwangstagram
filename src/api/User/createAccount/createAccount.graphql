@@ -7,3 +7,5 @@ type Mutation {
     bio: String
   ): Boolean!
 }
+# username과 메일.. 그리고 결과값으로 불린은 필수임
+# createAccount가 하고싶다면!!

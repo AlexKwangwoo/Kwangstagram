@@ -1,3 +1,9 @@
+# 여기 있는 타입 기준으로 나중에 각 요소의 graphql에서 리턴할것이다!!
+# User의 username있을려면 String 필수라는 뜻임!
+# bio는 string이 타입이지만 있어도되고 빈칸이여도 된다는 뜻임!
+# 그렇다면 User를 만들때 avatar,email username이런것들을 필수로 넣고싶을떈?
+# 각각의 grqphql에서 정의한다! 다시!! 예를 들어 createAccount가보면 알수있음!
+#[]! 에서 ! 은 없어도 되고 있어도 된다라고 생각하자!
 type User {
   id: ID!
   avatar: String
@@ -14,6 +20,7 @@ type User {
   followers: [User!]!
   followersCount: Int!
   posts: [Post!]!
+  postsCount: Int!
   likes: [Like!]!
   comments: [Comment!]!
   rooms: [Room!]!
@@ -32,6 +39,7 @@ type Post {
   comments: [Comment!]!
   isLiked: Boolean!
   likeCount: Int!
+  commentCount: Int!
   createdAt: String
   updatedAt: String
 }
