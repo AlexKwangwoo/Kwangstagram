@@ -9,9 +9,9 @@ export default {
     isLiked: async (parent, _, { request }) => {
       //내가 포스트 좋아요눌렀는지 확인!
       const { user } = request;
-      console.log(user);
+      //console.log(user);
       const { id } = parent;
-      console.log(parent);
+      //console.log(parent);
       return prisma.$exists.like({
         //true or false로 반환!
         AND: [

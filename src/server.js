@@ -6,17 +6,17 @@ import passport, { authenticate } from "passport";
 import "./passport";
 import { authenticateJwt } from "./passport";
 import { isAuthenticated } from "./middlewares";
-
+import { uploadController, uploadMiddleware } from "./upload";
 
 // sendSecretMail("bnc3049@gmail.com", "123");
 
 const PORT = process.env.PORT || 5000;
 // dotenv 를 이용해 env에서 포트 번호라던지 메일 패쓰워드가 들어온다
 
-const server = new GraphQLServer({ 
-  schema, 
-  context:({request}) => ({request, isAuthenticated}) // req에 request만 빼서 그 오브젝트를
-  //context에 객체 값으로 줌.. 
+const server = new GraphQLServer({
+  schema,
+  context: ({ request }) => ({ request, isAuthenticated }), // req에 request만 빼서 그 오브젝트를
+  //context에 객체 값으로 줌..
 
   // 여기서의 req는 passport의 req랑 다름.. context의 req객체에 담기는
   //정보중 하나가 passport의 req객체와 같아질것임!
@@ -27,6 +27,14 @@ const server = new GraphQLServer({
 
 server.express.use(logger("dev"));
 server.express.use(authenticateJwt);
+server.express.post("/api/upload", uploadMiddleware, uploadController);
+//미들웨어는 controller가 실행되기전에 먼저 실행되는것임!
+// server.express.post("/api/upload", upload.single("file"), (req, res) => {
+//   //multer가 들어오는 파일을 중간에 가로채서 upload.single해준다!
+//   const { file } = req;
+//   console.log(file);
+// }); //get대신 post로 받을꺼임!
+
 // server.express.use(passport.authenticate("jwt"));
 // 모든경로를 jwt로 보호함!!
 // 서버에 전달되는 모든 요청은 이 authenticateJwt함수를 통과한다!
