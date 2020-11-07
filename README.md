@@ -1,6 +1,13 @@
 # Kwangstagram
 
+This is for Kwangstagram frontend!!
+
 Instragram clone with Express + Prisma + React and React Native
+
+1. run the backend. type in terminal => cd ../kwangstagram
+2. and type npm run dev
+3. run the server
+4. type npm run start
 
 ## User Stories
 
@@ -11,10 +18,10 @@ Instragram clone with Express + Prisma + React and React Native
 - [x] See user profile
 - [x] Follow / Unfollow User
 - [x] See the full photo
-- [ ] Follow User
-- [ ] Edit my profile
-- [ ] Create account
-- [ ] Log in
-- [ ] Upload a photo
-- [ ] Edit the photo (Delete)
-- [ ] See the feed
+- [x] Follow User
+- [x] Edit my profile
+- [x] Create account
+- [x] Log in
+- [x] Upload a photo
+- [x] Edit the photo (Delete)
+- [x] See the feed
